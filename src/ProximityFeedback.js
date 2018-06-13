@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import { distancePoints, lineEq } from './MathUtils';
 import getMousePosition from './MouseUtils';
+import createRef from 'create-react-ref/lib/createRef';
 
 /**
  * Based on Codrops article: Ideas for Proximity Feedback with Progressive Hover Effects
@@ -116,7 +117,7 @@ class ProximityFeedback extends Component {
     distance: -1
   };
 
-  ref = React.createRef();
+  ref = createRef();
 
   onMouseMove = event =>
     // see for vanilla js implementation:
